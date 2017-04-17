@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Dain Vue</title>
+  <link href="./style.css" rel='stylesheet'>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+  <div id='vue-app'>
+    <h1>{{ name }}</h1>
+    <p :class='cave'>{{ greet('ding dong') }}</p>
+    <div v-html='weapon'></div>
+    <h2>{{ brigades }} brigades</h2>
+    <button @click="brigades++">add a brigade</button>
+    <button v-on:click.once="brigades--">subtract a brigade</button>
+    <div id='canvas' v-on:mousemove='updateXY'>{{x}}, {{y}}</div>
+    <button @click="getColors">get some colors</button>
+    <button @click="logColors">log those colors</button>
+    <ul v-if="colors.length == 6">
+      <li v-for="color in colors">hi</li>
+    </ul>
+    <p v-else>No colors found.</p>
+    <!-- <ul>{{ renderColors() }}</ul>
+ -->  </div>
 
+
+  <script src="./app.js"></script>
 </body>
 </html>
