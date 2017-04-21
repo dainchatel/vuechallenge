@@ -5,7 +5,7 @@ import App from './App'
 
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 
 /* eslint-disable no-new */
